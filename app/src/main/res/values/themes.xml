@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Swiftie" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="buttonStyle">@style/MyButtonStyle</item> <!-- Apply custom button style -->
+    </style>
+
+    <style name="Theme.Swiftie" parent="Base.Theme.Swiftie" />
+
+    <!-- Define your custom button style -->
+    <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/custom_button</item> <!-- Custom background -->
+        <item name="android:textColor">@android:color/white</item> <!-- Default text color -->
+    </style>
+</resources>

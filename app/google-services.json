@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "246653142847",
+    "project_id": "swiftie-69050",
+    "storage_bucket": "swiftie-69050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246653142847:android:2bd6156be8f9f4bf6cf58a",
+        "android_client_info": {
+          "package_name": "com.example.swiftie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxloXOLyNzdd7V3bj1KmvjRTJxa_gV7zU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

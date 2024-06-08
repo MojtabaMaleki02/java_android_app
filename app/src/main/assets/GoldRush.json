@@ -1,0 +1,132 @@
+[
+  {
+    "id": "1",
+    "question": "Which song is from the '1989' album?",
+    "options": [
+      "Love Story",
+      "Shake It Off",
+      "Fearless",
+      "Red"
+    ],
+    "answer": 1,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "2",
+    "question": "Which album features the song 'Blank Space'? 2",
+    "options": [
+      "Fearless",
+      "1989",
+      "Speak Now",
+      "Red"
+    ],
+    "answer": 1,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "3",
+    "question": "Which song is NOT from the 'Red' album? 3",
+    "options": [
+      "22",
+      "We Are Never Ever Getting Back Together",
+      "I Knew You Were Trouble",
+      "You Belong With Me"
+    ],
+    "answer": 3,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "4",
+    "question": "Which song is from the 'Fearless' album? 4",
+    "options": [
+      "Delicate",
+      "Fearless",
+      "Lover",
+      "Style"
+    ],
+    "answer": 1,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "5",
+    "question": "Which album includes the song 'Lover'? 5",
+    "options": [
+      "1989",
+      "Speak Now",
+      "Reputation",
+      "Lover"
+    ],
+    "answer": 3,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "6",
+    "question": "Which song is from the 'Speak Now' album? 6",
+    "options": [
+      "Enchanted",
+      "Red",
+      "Wildest Dreams",
+      "The Man"
+    ],
+    "answer": 0,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "7",
+    "question": "Which song is NOT from the 'Reputation' album? 7",
+    "options": [
+      "End Game",
+      "Look What You Made Me Do",
+      "Bad Blood",
+      "Delicate"
+    ],
+    "answer": 2,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "8",
+    "question": "Which album features the song 'All Too Well'? 8",
+    "options": [
+      "Fearless",
+      "Red",
+      "Speak Now",
+      "Lover"
+    ],
+    "answer": 1,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "9",
+    "question": "Which song is from the 'Lover' album? 9",
+    "options": [
+      "Cruel Summer",
+      "New Romantics",
+      "Treacherous",
+      "Tim McGraw"
+    ],
+    "answer": 0,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  },
+  {
+    "id": "10",
+    "question": "Which song is NOT from the 'Fearless' album? 10",
+    "options": [
+      "Love Story",
+      "You Belong With Me",
+      "Fifteen",
+      "Bad Blood"
+    ],
+    "answer": 3,
+    "difficulty": "Sparkle",
+    "category": "Albums and Songs"
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "1",
+    "question": "Which unreleased song did Taylor Swift write for her debut album but never officially released?",
+    "options": [
+      "Permanent Marker",
+      "Dark Blue Tennessee",
+      "I'd Lie",
+      "Need You Now"
+    ],
+    "answer": 1,
+    "difficulty": "Mastermind",
+    "category": "Unreleased Songs"
+  },
+  {
+    "id": "2",
+    "question": "In which city did Taylor Swift write the song 'Welcome to New York'?",
+    "options": [
+      "New York",
+      "Nashville",
+      "Los Angeles",
+      "London"
+    ],
+    "answer": 2,
+    "difficulty": "Mastermind",
+    "category": "Songwriting"
+  },
+  {
+    "id": "3",
+    "question": "Which line is the final lyric in the song 'All Too Well (10 Minute Version)'?",
+    "options": [
+      "You keep my old scarf",
+      "Time won't fly, it's like I'm paralyzed by it",
+      "Just between us, did the love affair maim you too?",
+      "I remember it all too well"
+    ],
+    "answer": 2,
+    "difficulty": "Mastermind",
+    "category": "Lyrics"
+  },
+  {
+    "id": "4",
+    "question": "Which song did Taylor Swift co-write with Ed Sheeran for the 'Red' album that wasn't released until 'Red (Taylor's Version)'?",
+    "options": [
+      "Everything Has Changed",
+      "Run",
+      "End Game",
+      "The Last Time"
+    ],
+    "answer": 1,
+    "difficulty": "Mastermind",
+    "category": "Collaborations"
+  },
+  {
+    "id": "5",
+    "question": "Which song on the '1989' album contains the hidden message 'She lost him but she found herself and somehow that was everything'?",
+    "options": [
+      "Clean",
+      "Out of the Woods",
+      "Shake It Off",
+      "New Romantics"
+    ],
+    "answer": 0,
+    "difficulty": "Mastermind",
+    "category": "Hidden Messages"
+  },
+  {
+    "id": "6",
+    "question": "What was the original title of Taylor Swift's song 'Tim McGraw'?",
+    "options": [
+      "Johnny's Song",
+      "Tim McGraw",
+      "Your Favorite Song",
+      "My Favorite Song"
+    ],
+    "answer": 2,
+    "difficulty": "Mastermind",
+    "category": "Songwriting"
+  },
+  {
+    "id": "7",
+    "question": "In the music video for 'Look What You Made Me Do', which symbolic item is Taylor Swift holding while sitting on a throne?",
+    "options": [
+      "A snake",
+      "A glass of wine",
+      "A scepter",
+      "A golden key"
+    ],
+    "answer": 1,
+    "difficulty": "Mastermind",
+    "category": "Music Videos"
+  },
+  {
+    "id": "8",
+    "question": "Which famous literary work inspired Taylor Swift's song 'Wonderland'?",
+    "options": [
+      "Alice's Adventures in Wonderland",
+      "The Great Gatsby",
+      "Pride and Prejudice",
+      "Romeo and Juliet"
+    ],
+    "answer": 0,
+    "difficulty": "Mastermind",
+    "category": "Literary References"
+  },
+  {
+    "id": "9",
+    "question": "Which song did Taylor Swift perform at the 2014 Grammy Awards with only a piano as accompaniment?",
+    "options": [
+      "All Too Well",
+      "Red",
+      "Mean",
+      "Back to December"
+    ],
+    "answer": 0,
+    "difficulty": "Mastermind",
+    "category": "Live Performances"
+  },
+  {
+    "id": "10",
+    "question": "Which song did Taylor Swift write for the 'Speak Now' album that is rumored to be about Kanye West?",
+    "options": [
+      "Mean",
+      "Innocent",
+      "Back to December",
+      "Dear John"
+    ],
+    "answer": 1,
+    "difficulty": "Mastermind",
+    "category": "Rumored Inspirations"
+  }
+]

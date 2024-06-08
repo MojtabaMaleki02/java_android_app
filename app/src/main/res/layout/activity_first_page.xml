@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#F9F9E0"
+    tools:context=".FirstPageActivity">
+
+    <!-- Top Left LinearLayout for Coins -->
+    <LinearLayout
+        android:id="@+id/btnAddGemTopLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/help_button_background"
+        android:layout_marginTop="10dp">
+
+        <!-- Coin Icon -->
+        <ImageView
+            android:id="@+id/iconCoinsTopLeft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/coinicon" />
+
+        <!-- Number of Coins -->
+        <TextView
+            android:id="@+id/coinsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/rounded_background"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Top Right LinearLayout for Show Rank -->
+    <LinearLayout
+        android:id="@+id/btnShowRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/help_button_background"
+        android:layout_marginTop="10dp">
+
+        <!-- Rank Icon -->
+        <ImageView
+            android:id="@+id/iconRankTopRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/profileicon" />
+
+        <!-- Rank Text -->
+        <TextView
+            android:id="@+id/textRankTopRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connecting..."
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/rounded_background"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Main LinearLayout for Rank, Points, and Coins -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
+
+        <!-- Rank and Points LinearLayout (Left Side) -->
+        <LinearLayout
+            android:id="@+id/leftLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/help_button_background"
+            android:padding="16dp"
+            android:layout_weight="1">
+
+            <!-- Rank Icon -->
+            <ImageView
+                android:id="@+id/iconRank"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/medal" />
+
+            <!-- Points -->
+            <TextView
+                android:id="@+id/textPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="55 Points"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/rounded_background"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Coins LinearLayout (Right Side) -->
+        <LinearLayout
+            android:id="@+id/btnAddGem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="@drawable/help_button_background"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1">
+
+            <!-- Coin Icon -->
+            <ImageView
+                android:id="@+id/iconCoins"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/coinicon" />
+
+            <!-- Number of Coins -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free Gold"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/rounded_background"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main LinearLayout for User Icon, Username, Start Quiz, Show Rank -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/rounded_text_background"
+        android:layout_centerInParent="true">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <!-- User Icon -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/userIconCardView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="150dp"
+                app:cardElevation="0dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/userIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon1"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- User Border -->
+            <ImageView
+                android:id="@+id/userBorder"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/firefly"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <!-- Username -->
+        <TextView
+            android:id="@+id/textUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UserName"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Rank -->
+        <TextView
+            android:id="@+id/textRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swiftie 77"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Start Quiz Button -->
+        <Button
+            android:id="@+id/btnStartQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/end_screen_button"
+            android:textSize="25sp" />
+
+        <!-- Show Rank Button (removed this since replaced with a LinearLayout above) -->
+    </LinearLayout>
+
+</RelativeLayout>

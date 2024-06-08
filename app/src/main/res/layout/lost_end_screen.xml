@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#BDBD97">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutContainer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_text_background"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="You Lost"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/textViewTitle"/>
+
+        <TextView
+            android:id="@+id/textViewPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewTitle"
+            android:layout_centerHorizontal="true"
+            android:text="Amount of Lost Points"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btnBackToFirstPage"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewPoints"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:background="@drawable/end_screen_button"
+            android:text="Continue" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

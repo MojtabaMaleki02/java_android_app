@@ -1,0 +1,20 @@
+<!-- res/drawable/rounded_text_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow Layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="#FF90C2" />
+            <padding
+                android:bottom="5dp" />
+        </shape>
+    </item>
+
+    <!-- Main Background Layer -->
+    <item android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FDCFDF" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>
