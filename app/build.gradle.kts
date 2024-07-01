@@ -43,9 +43,11 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    implementation("com.google.android.gms:play-services-ads:23.2.0")
+
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.firebase:firebase-analytics")
-    // TODO: Add the dependencies for any other Firebase products you want to use
+
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.airbnb.android:lottie:4.2.0")

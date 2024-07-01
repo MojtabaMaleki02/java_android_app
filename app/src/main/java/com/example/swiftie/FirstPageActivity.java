@@ -3,7 +3,6 @@ package com.example.swiftie;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -21,6 +20,14 @@ import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,6 +45,7 @@ import java.util.Set;
 
 public class FirstPageActivity extends AppCompatActivity {
 
+    public static final String TEST_DEVICE_HASHED_ID = "ABCDEF012345";
     private static final String PREFS_NAME = "UserPrefs";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_ICON = "icon";
@@ -58,10 +66,15 @@ public class FirstPageActivity extends AppCompatActivity {
     TextView onlineRank;
     ImageView rankBoarder;
 
+    private RewardedAd mRewardedAd;
+    private boolean isAdLoading = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
+
+        MobileAds.initialize(this, initializationStatus -> {});
 
         LinearLayout leftLayout = findViewById(R.id.leftLayout);
         leftLayout.setOnClickListener(v -> showRankListDialog());
@@ -82,7 +95,7 @@ public class FirstPageActivity extends AppCompatActivity {
 
         updateGemCount();
 
-        btnAddGem.setOnClickListener(v -> addGem());
+        btnAddGem.setOnClickListener(v -> showRewardedAd());
 
         // Load the saved icon resource ID
         int savedIcon = getSavedIcon();
@@ -120,6 +133,8 @@ public class FirstPageActivity extends AppCompatActivity {
 
         // Populate icons array with drawables prefixed with "icon"
         icons = getIconsByPrefix("icon");
+
+        loadRewardedAd();
     }
 
     private void updateGemCount() {
@@ -130,6 +145,60 @@ public class FirstPageActivity extends AppCompatActivity {
     private void addGem() {
         gemCounter.addGems(1);
         updateGemCount(); // Update button text after adding gem
+    }
+
+    private void showRewardedAd() {
+        if (mRewardedAd != null) {
+            mRewardedAd.show(FirstPageActivity.this, new OnUserEarnedRewardListener() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                    addGem(); // Reward the user with a gem
+                }
+            });
+        } else {
+            loadRewardedAd(); // Load the ad if it's not ready
+        }
+    }
+
+    private void loadRewardedAd() {
+        if (isAdLoading) {
+            return;
+        }
+        isAdLoading = true;
+        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917", // Replace with your Ad Unit ID
+                new com.google.android.gms.ads.AdRequest.Builder().build(),
+                new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+                        isAdLoading = false;
+                        setFullScreenContentCallback();
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        mRewardedAd = null;
+                        isAdLoading = false;
+                    }
+                });
+    }
+
+    private void setFullScreenContentCallback() {
+        if (mRewardedAd != null) {
+            mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                @Override
+                public void onAdDismissedFullScreenContent() {
+                    mRewardedAd = null;
+                    loadRewardedAd();
+                }
+
+                @Override
+                public void onAdFailedToShowFullScreenContent(AdError adError) {
+                    mRewardedAd = null;
+                    loadRewardedAd();
+                }
+            });
+        }
     }
 
     private int getSavedIcon() {
@@ -378,8 +447,6 @@ public class FirstPageActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
-
     private int[] getIconsByPrefix(String prefix) {
         List<Integer> iconList = new ArrayList<>();
         Field[] fields = R.drawable.class.getFields();
@@ -398,6 +465,7 @@ public class FirstPageActivity extends AppCompatActivity {
         }
         return icons;
     }
+
     private void showRankListDialog() {
         Rank nameOfTheRank = new Rank(spCounter.getPoints());
         nameOfTheRank.getRankName().toUpperCase().equals("FIREFLY");
@@ -423,3 +491,4 @@ public class FirstPageActivity extends AppCompatActivity {
         dialog.show();
     }
 }
+
