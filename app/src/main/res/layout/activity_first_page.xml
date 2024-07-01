@@ -3,9 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
-    android:background="#F9F9E0"
+    android:background="@drawable/gradientbg"
     tools:context=".FirstPageActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/semi_transparent_overlay" />
+    </FrameLayout>
 
     <!-- Top Left LinearLayout for Coins -->
     <LinearLayout
@@ -26,7 +35,7 @@
             android:id="@+id/iconCoinsTopLeft"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/coinicon" />
+            android:src="@drawable/coinicon"/>
 
         <!-- Number of Coins -->
         <TextView
@@ -37,7 +46,8 @@
             android:textSize="18sp"
             android:textColor="@android:color/black"
             android:background="@drawable/rounded_background"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/heycomic"/>
     </LinearLayout>
 
     <!-- Top Right LinearLayout for Show Rank -->
@@ -70,7 +80,8 @@
             android:textSize="20sp"
             android:textColor="@android:color/black"
             android:background="@drawable/rounded_background"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/heycomic"/>
     </LinearLayout>
 
     <!-- Main LinearLayout for Rank, Points, and Coins -->
@@ -81,6 +92,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
+        android:layout_marginLeft="20dp"
         android:gravity="center">
 
         <!-- Rank and Points LinearLayout (Left Side) -->
@@ -107,10 +119,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="55 Points"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textColor="@android:color/black"
                 android:background="@drawable/rounded_background"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/heycomic"/>
         </LinearLayout>
 
         <!-- Coins LinearLayout (Right Side) -->
@@ -140,7 +153,8 @@
                 android:textSize="18sp"
                 android:textColor="@android:color/black"
                 android:background="@drawable/rounded_background"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/heycomic"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -161,8 +175,8 @@
             <!-- User Icon -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/userIconCardView"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 app:cardCornerRadius="150dp"
                 app:cardElevation="0dp"
                 android:layout_gravity="center">
@@ -179,8 +193,8 @@
             <!-- User Border -->
             <ImageView
                 android:id="@+id/userBorder"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
                 android:src="@drawable/firefly"
                 android:layout_gravity="center"/>
 
@@ -192,9 +206,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="UserName"
-            android:textSize="24sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/heycomic"/>
 
         <!-- Rank -->
         <TextView
@@ -202,21 +217,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Swiftie 77"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/heycomic"/>
 
         <!-- Start Quiz Button -->
         <Button
             android:id="@+id/btnStartQuiz"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text="Play"
             android:layout_marginBottom="20dp"
             android:background="@drawable/end_screen_button"
-            android:textSize="25sp" />
-
-        <!-- Show Rank Button (removed this since replaced with a LinearLayout above) -->
+            android:textSize="28sp"
+            android:fontFamily="@font/heycomic"/>
     </LinearLayout>
 
 </RelativeLayout>

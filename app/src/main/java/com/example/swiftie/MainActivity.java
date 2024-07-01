@@ -3,6 +3,8 @@ package com.example.swiftie;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -11,13 +13,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener answerClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Example usage: change the drawable to a random icon between icon1 and icon70
+                updateTextViewBackground(generateRandomIcon());
                 if (!isAnswered) {
                     isAnswered = true;
                     if (countDownTimer != null) {
@@ -153,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
                 showConfirmationDialog();
             }
         });
+
+
     }
 
     private void showConfirmationDialog() {
@@ -296,28 +303,54 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
-    private void addTimeToTimer(long millisToAdd) {
-        timeLeftInMillis += millisToAdd;
+    private void addTimeToTimer(long additionalMillis) {
+        timeLeftInMillis += additionalMillis;
         startCountdownTimer(timeLeftInMillis);
     }
 
     private void deactivateTwoIncorrectAnswers() {
-        ArrayList<Button> answerButtons = new ArrayList<>();
-        answerButtons.add(answerA);
-        answerButtons.add(answerB);
-        answerButtons.add(answerC);
-        answerButtons.add(answerD);
-
         ArrayList<Button> incorrectButtons = new ArrayList<>();
-        for (Button button : answerButtons) {
-            if (!button.getText().toString().equals(questionData.options[questionData.answer])) {
-                incorrectButtons.add(button);
-            }
+        if (!answerA.getText().toString().equals(questionData.options[questionData.answer])) {
+            incorrectButtons.add(answerA);
+        }
+        if (!answerB.getText().toString().equals(questionData.options[questionData.answer])) {
+            incorrectButtons.add(answerB);
+        }
+        if (!answerC.getText().toString().equals(questionData.options[questionData.answer])) {
+            incorrectButtons.add(answerC);
+        }
+        if (!answerD.getText().toString().equals(questionData.options[questionData.answer])) {
+            incorrectButtons.add(answerD);
         }
 
-        // Randomize the incorrect answers and disable the first two
         Collections.shuffle(incorrectButtons);
-        incorrectButtons.get(0).setEnabled(false);
-        incorrectButtons.get(1).setEnabled(false);
+
+        if (incorrectButtons.size() > 1) {
+            incorrectButtons.get(0).setEnabled(false);
+            incorrectButtons.get(1).setEnabled(false);
+        }
+    }
+
+    private void updateTextViewBackground(int drawableResId) {
+        // Get the current background as a LayerDrawable
+        LayerDrawable layerDrawable = (LayerDrawable) question.getBackground();
+
+        // Get the new drawable
+        Drawable newDrawable = ContextCompat.getDrawable(this, drawableResId);
+
+        // Replace the drawable in the LayerDrawable
+        if (newDrawable != null) {
+            layerDrawable.setDrawableByLayerId(R.id.background_layer, newDrawable);
+        }
+
+        // Set the updated LayerDrawable as the background of the TextView
+        question.setBackground(layerDrawable);
+    }
+
+    private int generateRandomIcon() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(70) + 1; // Generates a random number between 1 and 70
+        String iconName = "icon" + randomNumber;
+        return getResources().getIdentifier(iconName, "drawable", getPackageName());
     }
 }

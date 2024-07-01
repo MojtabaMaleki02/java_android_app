@@ -3,7 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#BDBD97">
+    android:background="@drawable/gradientbg">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Semi-transparent view to simulate blur -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/semi_transparent_overlay" />
+    </FrameLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="rain.json"
+        app:lottie_loop="true" />
 
     <RelativeLayout
         android:id="@+id/relativeLayoutContainer"
@@ -14,6 +33,7 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -21,7 +41,7 @@
             android:textSize="26sp"
             android:textStyle="bold"
             android:layout_marginBottom="10dp"
-            android:id="@+id/textViewTitle"/>
+            android:fontFamily="@font/heycomic"/>
 
         <TextView
             android:id="@+id/textViewPoints"
@@ -31,7 +51,8 @@
             android:layout_centerHorizontal="true"
             android:text="Amount of Lost Points"
             android:textSize="20sp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/heycomic"/>
 
         <Button
             android:id="@+id/btnBackToFirstPage"
@@ -41,7 +62,8 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
             android:background="@drawable/end_screen_button"
-            android:text="Continue" />
+            android:text="Continue"
+            android:fontFamily="@font/heycomic"/>
 
     </RelativeLayout>
 

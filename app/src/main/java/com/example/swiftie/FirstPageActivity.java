@@ -3,6 +3,7 @@ package com.example.swiftie;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,6 +62,9 @@ public class FirstPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
+
+        LinearLayout leftLayout = findViewById(R.id.leftLayout);
+        leftLayout.setOnClickListener(v -> showRankListDialog());
 
         userIcon = findViewById(R.id.userIcon);
 
@@ -172,7 +177,7 @@ public class FirstPageActivity extends AppCompatActivity {
 
     private void showPurchaseIconDialog(int selectedIcon, AlertDialog parentDialog) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Do you want to purchase this icon for 10 gems?")
+        builder.setMessage("Do you want to purchase this icon for 10 golds?")
                 .setPositiveButton("Yes", (dialog, id) -> {
                     if (gemCounter.spendGems(10)) {
                         unlockIcon(selectedIcon);
@@ -297,7 +302,7 @@ public class FirstPageActivity extends AppCompatActivity {
                         StringBuilder rankMessage = new StringBuilder(nameOfTheRank.getRankName()+" "+ spCounter.getPoints());
                         textRank.setText(rankMessage);
                         textUserNameIcon.setText(username);
-                        rankNameTextView.setText("You Are "+nameOfTheRank.getRankName());
+                        rankNameTextView.setText(nameOfTheRank.getRankName());
                         onlineRank.setText(String.valueOf(rank));
 
                         if (nameOfTheRank.getRankName().toUpperCase().equals("FIREFLY")){
@@ -392,5 +397,29 @@ public class FirstPageActivity extends AppCompatActivity {
             icons[i] = iconList.get(i);
         }
         return icons;
+    }
+    private void showRankListDialog() {
+        Rank nameOfTheRank = new Rank(spCounter.getPoints());
+        nameOfTheRank.getRankName().toUpperCase().equals("FIREFLY");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.rank_list_explain, null);
+        builder.setView(dialogView);
+
+        ListView listViewRankTiers = dialogView.findViewById(R.id.listViewRankTiers);
+
+        List<RankTier> rankTiers = new ArrayList<>();
+        rankTiers.add(new RankTier("Swiftie", 2500, nameOfTheRank.getRankName().toUpperCase().equals("Swiftie".toUpperCase())));
+        rankTiers.add(new RankTier("Maroon", 2000, nameOfTheRank.getRankName().toUpperCase().equals("Maroon".toUpperCase())));
+        rankTiers.add(new RankTier("Lover", 1500, nameOfTheRank.getRankName().toUpperCase().equals("Lover".toUpperCase())));
+        rankTiers.add(new RankTier("Goldrush", 1000, nameOfTheRank.getRankName().toUpperCase().equals("Goldrush".toUpperCase())));
+        rankTiers.add(new RankTier("Cornelia", 500, nameOfTheRank.getRankName().toUpperCase().equals("Cornelia".toUpperCase())));
+        rankTiers.add(new RankTier("Firefly", 0, nameOfTheRank.getRankName().toUpperCase().equals("Firefly".toUpperCase())));
+
+        RankTierAdapter adapter = new RankTierAdapter(this, rankTiers);
+        listViewRankTiers.setAdapter(adapter);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

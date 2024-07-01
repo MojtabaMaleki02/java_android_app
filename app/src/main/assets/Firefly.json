@@ -14,7 +14,7 @@
   },
   {
     "id": "2",
-    "question": "Which album features the song 'Blank Space'? 2",
+    "question": "Which album features the song 'Blank Space'?",
     "options": [
       "Fearless",
       "1989",
@@ -27,7 +27,7 @@
   },
   {
     "id": "3",
-    "question": "Which song is NOT from the 'Red' album? 3",
+    "question": "Which song is NOT from the 'Red' album?",
     "options": [
       "22",
       "We Are Never Ever Getting Back Together",
@@ -40,7 +40,7 @@
   },
   {
     "id": "4",
-    "question": "Which song is from the 'Fearless' album? 4",
+    "question": "Which song is from the 'Fearless' album?",
     "options": [
       "Delicate",
       "Fearless",
@@ -53,7 +53,7 @@
   },
   {
     "id": "5",
-    "question": "Which album includes the song 'Lover'? 5",
+    "question": "Which album includes the song 'Lover'?",
     "options": [
       "1989",
       "Speak Now",
@@ -66,7 +66,7 @@
   },
   {
     "id": "6",
-    "question": "Which song is from the 'Speak Now' album? 6",
+    "question": "Which song is from the 'Speak Now' album?",
     "options": [
       "Enchanted",
       "Red",
@@ -79,7 +79,7 @@
   },
   {
     "id": "7",
-    "question": "Which song is NOT from the 'Reputation' album? 7",
+    "question": "Which song is NOT from the 'Reputation' album?",
     "options": [
       "End Game",
       "Look What You Made Me Do",
@@ -92,7 +92,7 @@
   },
   {
     "id": "8",
-    "question": "Which album features the song 'All Too Well'? 8",
+    "question": "Which album features the song 'All Too Well'?",
     "options": [
       "Fearless",
       "Red",
@@ -105,7 +105,7 @@
   },
   {
     "id": "9",
-    "question": "Which song is from the 'Lover' album? 9",
+    "question": "Which song is from the 'Lover' album?",
     "options": [
       "Cruel Summer",
       "New Romantics",
@@ -118,7 +118,7 @@
   },
   {
     "id": "10",
-    "question": "Which song is NOT from the 'Fearless' album? 10",
+    "question": "Which song is NOT from the 'Fearless' album?",
     "options": [
       "Love Story",
       "You Belong With Me",

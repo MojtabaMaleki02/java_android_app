@@ -9,18 +9,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter your username"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:fontFamily="@font/heycomic"/>
 
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username" />
+        android:hint="Username"
+        android:fontFamily="@font/heycomic"/>
 
     <Button
         android:id="@+id/confirmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm" />
+        android:text="Confirm"
+        android:fontFamily="@font/heycomic"/>
 
 </LinearLayout>

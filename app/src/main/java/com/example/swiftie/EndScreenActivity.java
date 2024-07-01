@@ -3,6 +3,7 @@ package com.example.swiftie;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.ScaleAnimation;
@@ -26,14 +27,13 @@ public class EndScreenActivity extends AppCompatActivity {
         int finalPoints = getIntent().getIntExtra("finalPoints", 0);
         int pointsChange = finalPoints - initialPoints;
 
-        // Load the appropriate layout based on pointsChange
         if (pointsChange > 0) {
             setContentView(R.layout.activity_end_screen);
         } else {
             setContentView(R.layout.lost_end_screen);
         }
 
-        // Initialize the RelativeLayout, textViewPoints, and btnBackToFirstPage in both branches
+        // Initialize the RelativeLayout, textViewPoints, and btnBackToFirstPage
         RelativeLayout rootLayout = findViewById(R.id.relativeLayoutContainer);
         textViewPoints = findViewById(R.id.textViewPoints);
         btnBackToFirstPage = findViewById(R.id.btnBackToFirstPage);
@@ -55,25 +55,20 @@ public class EndScreenActivity extends AppCompatActivity {
         // Animate the points change
         animatePointsChange(pointsChange);
 
-        btnBackToFirstPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EndScreenActivity.this, FirstPageActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        btnBackToFirstPage.setOnClickListener(v -> {
+            Intent intent = new Intent(EndScreenActivity.this, FirstPageActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
+
 
     private void animatePointsChange(int pointsChange) {
         ValueAnimator animator = ValueAnimator.ofInt(0, pointsChange);
         animator.setDuration(3000); // 3 seconds
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                int animatedValue = (int) animation.getAnimatedValue();
-                textViewPoints.setText(animatedValue + " Points");
-            }
+        animator.addUpdateListener(animation -> {
+            int animatedValue = (int) animation.getAnimatedValue();
+            textViewPoints.setText(animatedValue + " Points");
         });
         animator.start();
     }

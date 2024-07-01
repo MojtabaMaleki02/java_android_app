@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="gray">#11FF00</color>
-    <color name="blue">#FF0000</color>
-    <!-- Define primary colors -->
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="black">#CC000000</color>
+    <color name="white">#80FFFFFF</color>
+    <color name="green">#FF11FF00</color>
+    <color name="red">#FFFF0000</color>
+
+    <!-- App specific colors -->
+    <color name="colorPrimary">#FF6200EE</color>
+    <color name="colorPrimaryDark">#FF3700B3</color>
+    <color name="colorAccent">#FF03DAC5</color>
+    <color name="golden">#FFFFC107</color>
+    <color name="mainBackground">#80F9F9E0</color>
+
+
+    <!-- Custom colors for your selector -->
+
+
+    <!-- Theme 1 -->
+    <color name="TextPink">#ED5AB3</color>
+    <color name="pink">#80ED5AB3</color>
+    <color name="default_state_solid">#80ED5AB3</color>
+    <color name="pressed_state_solid">#80FF90C2</color>
+    <color name="color_shadow">#33FF90C2</color>
+    <color name="selector_pressed">#80FCA3CC</color>
+    <color name="selector_default">#80FBBEDF</color>
+    <color name="color_background">#80FDCFDF</color>
+
+    <!-- Theme 2 -->
+    <color name="color_pressed">#66BCE6EB</color>
+    <color name="color_default">#66B0D2D6</color>
+    <color name="color_rounded_background">#66A4CBCF</color>
+    <color name="rectangle_color">#66B0D2D6</color>
+    <color name="rectangle_solid">#66BCE6EB</color>
+
+    <color name="text_color">#33000000</color>
+    <color name="color_button_background">#31000000</color>
+    <color name="semi_transparent_overlay">#1A000000</color>
+
 </resources>

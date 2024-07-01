@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.Set;
 
@@ -44,17 +43,17 @@ public class IconAdapter extends BaseAdapter {
 
         ImageView imageView = convertView.findViewById(R.id.iconImageView);
         View darkOverlay = convertView.findViewById(R.id.darkOverlay);
-        TextView unownedTextView = convertView.findViewById(R.id.unownedTextView);
+        ImageView lockImageView = convertView.findViewById(R.id.lockImageView);
 
         int icon = icons[position];
         imageView.setImageResource(icon);
 
         if (unlockedIcons.contains(icon)) {
             darkOverlay.setVisibility(View.GONE);
-            unownedTextView.setVisibility(View.GONE);
+            lockImageView.setVisibility(View.GONE);
         } else {
             darkOverlay.setVisibility(View.VISIBLE);
-            unownedTextView.setVisibility(View.VISIBLE);
+            lockImageView.setVisibility(View.VISIBLE);
         }
 
         return convertView;

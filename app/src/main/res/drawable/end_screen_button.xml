@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+
     <!-- Pressed state -->
     <item android:state_pressed="true">
         <layer-list>
-            <item>
+            <!-- Shadow Layer -->
+            <item android:right="2dp" android:bottom="2dp">
                 <shape android:shape="rectangle">
-                    <solid android:color="#ED5AB3" />
-                    <corners android:radius="17dp" />
+                    <solid android:color="@color/pressed_state_solid" />
+                    <corners android:radius="2dp" />
                 </shape>
             </item>
 
-            <item android:bottom="10dp" android:left="2dp" android:right="2dp" android:top="1dp">
+            <!-- Main Background Layer -->
+            <item>
                 <shape android:shape="rectangle">
-                    <solid android:color="#FF90C2" />
-                    <corners android:radius="17dp" />
+                    <solid android:color="@color/default_state_solid" />
+                    <corners android:radius="2dp" />
                 </shape>
             </item>
         </layer-list>
@@ -22,22 +25,19 @@
     <!-- Default state -->
     <item>
         <layer-list>
-            <item>
+            <!-- Shadow Layer -->
+            <item android:right="2dp" android:bottom="2dp">
                 <shape android:shape="rectangle">
-                    <solid android:color="#ED5AB3" />
-                    <corners android:radius="17dp" />
+                    <solid android:color="@color/pressed_state_solid" />
+                    <corners android:radius="2dp" />
                 </shape>
             </item>
 
-            <item android:bottom="7dp">
+            <!-- Main Background Layer -->
+            <item>
                 <shape android:shape="rectangle">
-                    <padding android:bottom="10dp"
-                        android:top="10dp"
-                        android:left="20dp"
-                        android:right="20dp"/>
-
-                    <solid android:color="#FF90C2" />
-                    <corners android:radius="17dp" />
+                    <solid android:color="@color/default_state_solid" />
+                    <corners android:radius="2dp" />
                 </shape>
             </item>
         </layer-list>

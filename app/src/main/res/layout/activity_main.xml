@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9F9E0"
+    android:background="@drawable/gradientbg"
     tools:context=".MainActivity">
 
     <ProgressBar
@@ -64,7 +64,8 @@
             app:layout_constraintEnd_toStartOf="@id/verticalCenterGuideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0" />
+            app:layout_constraintVertical_bias="0"
+            android:fontFamily="@font/heycomic"/>
 
         <Button
             android:id="@+id/answerC"
@@ -77,7 +78,8 @@
             app:layout_constraintEnd_toStartOf="@id/verticalCenterGuideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1" />
+            app:layout_constraintVertical_bias="1"
+            android:fontFamily="@font/heycomic"/>
 
         <Button
             android:id="@+id/answerD"
@@ -90,7 +92,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/verticalCenterGuideline"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0" />
+            app:layout_constraintVertical_bias="0"
+            android:fontFamily="@font/heycomic"/>
 
         <Button
             android:id="@+id/answerA"
@@ -103,7 +106,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/verticalCenterGuideline"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1" />
+            app:layout_constraintVertical_bias="1"
+            android:fontFamily="@font/heycomic"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -116,22 +120,22 @@
 
     <TextView
         android:id="@+id/Question"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:background="@drawable/rounded_text_background"
-        android:fontFamily="Arial"
+        android:layout_width="280dp"
+        android:layout_height="250dp"
+        android:background="@drawable/main_question_box"
+        android:fontFamily="@font/heycomic"
         android:gravity="center"
         android:padding="16dp"
         android:text="Question"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="26sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/btnDeactivateAnswers"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <LinearLayout
         android:id="@+id/btnDeactivateAnswers"
@@ -164,7 +168,8 @@
             android:text="Delete Two"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:fontFamily="@font/heycomic"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -187,7 +192,8 @@
                 android:text=" 10"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/heycomic"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -222,7 +228,8 @@
             android:text="2X seconds"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:fontFamily="@font/heycomic"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -245,7 +252,8 @@
                 android:text=" 10"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/heycomic"/>
         </LinearLayout>
     </LinearLayout>
 

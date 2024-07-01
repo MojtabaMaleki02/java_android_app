@@ -3,18 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="12dp"
+    android:background="@drawable/custom_dialog_background">
 
     <GridView
         android:id="@+id/gridViewIcons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="3"
-        android:verticalSpacing="20dp"
-        android:horizontalSpacing="20dp"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
         android:textAlignment="center"
         android:gravity="center"
         android:clipToPadding="false"
         android:scrollbars="vertical"
-        android:fadeScrollbars="false" />
+        android:fadeScrollbars="false"
+        android:fontFamily="@font/heycomic"/>
 </LinearLayout>

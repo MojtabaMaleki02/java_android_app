@@ -30,7 +30,7 @@ public class User {
         this.points = points;
     }
 
-    // Add setRank method
+    // Add setRank method if necessary
     public void setRank(int rank) {
         this.rank = rank;
     }
